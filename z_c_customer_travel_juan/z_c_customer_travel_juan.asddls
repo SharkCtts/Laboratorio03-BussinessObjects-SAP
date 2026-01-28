@@ -13,11 +13,14 @@ define root view entity Z_C_CUSTOMER_TRAVEL_JUAN
   @Search.fuzzinessThreshold: 0.8
   @Search.ranking: #HIGH
   @ObjectModel.text.element: [ 'CustomerLastName' ]
-  key CustomerID,   // <-- IMPORTANTE: debe ser key igual que en la raíz
+  key CustomerID, 
 
   Description,
 
   _Customer.LastName as CustomerLastName,
+
+  @ObjectModel.text.element: [ 'CountryCode' ]
+  _Customer.CountryCode as CountryCode,
 
   @Semantics.systemDateTime.localInstanceLastChangedAt: true
   LocalLastChangedAt,
